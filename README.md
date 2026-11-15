@@ -3,7 +3,11 @@
 A personal learning experiment: adapt a compact text encoder for a defined
 step in a business process, then run the saved model locally. This example
 checks whether a purchase request contains enough identifying information
-for buyer review across six purchasing categories.
+for buyer review across supported purchasing categories.
+
+![A shared engine compared with local motors: an analogy for general-purpose and narrow task models](docs/images/decision-model-analogy.png)
+
+*An illustration of the deployment idea; the prototype checks purchase requests for buyer review.*
 
 **Research/demo prototype.** Artificial policies, AI-authored labels, no independent
 human label review. Ready means buyer review, not order approval or engineering suitability.
