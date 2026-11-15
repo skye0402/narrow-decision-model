@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requisition Ready · Model workshop</title>
+<style>
+:root{font:16px/1.5 system-ui,sans-serif;color:#16342e;background:#f3f5f0;color-scheme:light}*{box-sizing:border-box}body{margin:0}header,main,footer{max-width:1280px;margin:auto;padding:24px 32px}header{padding-top:40px}h1{font-size:clamp(28px,4vw,42px);letter-spacing:-1.2px;margin:8px 0}h2{font-size:22px;margin:0 0 18px}p{margin:8px 0 18px}.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#557263}.badge{display:inline-block;border:1px solid #b2c0b4;border-radius:30px;padding:3px 12px;font-size:13px}.intro{max-width:800px;color:#486057}.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}.panel{background:#fff;border:1px solid #d6dfd4;border-radius:16px;padding:26px;min-width:0}label{display:block;font-size:14px;font-weight:600;margin-bottom:16px}input,select,textarea{display:block;width:100%;font:inherit;border:1px solid #a4b4aa;border-radius:7px;padding:9px 11px;margin-top:5px;background:white;color:#16342e}textarea{resize:vertical;min-height:145px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}button{font:inherit;border-radius:8px;border:0;background:#185d49;color:white;padding:12px 20px;cursor:pointer}button:disabled{opacity:.6;cursor:wait}.secondary{background:#e9efe6;color:#244d3d;padding:7px 11px;font-size:13px}.examples{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.muted{font-size:14px;color:#5a6c61}.result-title{font-size:25px;line-height:1.25;margin-bottom:8px}.status{border-left:4px solid #9cae9e;padding:12px 16px;background:#f3f6f1;border-radius:4px;margin:18px 0}.ready{border-color:#2d8060}.clarify{border-color:#c48b27}.error{color:#9d3424}.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.fact{background:#f3f5f0;padding:14px;border-radius:8px}.fact small{display:block;color:#5a6c61}ul{padding-left:22px}details{border-top:1px solid #d6dfd4;padding:14px 0}summary{cursor:pointer;font-weight:600}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#f3f5f0;padding:14px;border-radius:8px;max-height:400px;overflow:auto}.score{display:grid;grid-template-columns:1fr auto;gap:8px;font-size:13px;margin:8px 0}.track{grid-column:1/-1;height:5px;background:#e4eade;border-radius:4px;margin-top:-5px}.fill{height:5px;background:#42866b;border-radius:4px}.question{margin:16px 0 24px}footer{font-size:13px;color:#66776c;padding-bottom:40px}#run-state{min-height:24px;margin-top:12px}#result{scroll-margin-top:20px}@media(max-width:850px){.layout{grid-template-columns:1fr}header,main,footer{padding:20px}.panel{padding:20px}}
+</style>
+<header>
+  <div class="eyebrow">PRISM / Model workshop</div>
+  <h1>Requisition Ready <span class="badge" id="model-version">CPU model</span></h1>
+  <p class="intro" id="model-description">Try a narrow decision model for purchase requests. It recognizes a product category, then checks whether the request has enough information to reach a buyer.</p>
+  <p class="muted">Learning prototype trained on synthetic examples and fictional procurement policies. A Ready result means ready for buyer review; it does not approve a purchase.</p>
+  <p class="muted">Known errors on ordinary wording include false Ready decisions. Use this model for experiments only.</p>
+</header>
+<main class="layout">
+  <section class="panel">
+    <h2>Your requisition</h2>
+    <p class="muted">Start with an example, then change the wording or remove a specification.</p>
+    <div class="examples" id="examples"></div>
+    <form id="request-form">
+      <label>Item description<textarea name="description" required>Supply a replacement motor rated 5.5 kW, 400 V, three-phase.</textarea></label>
+      <div class="fields">
+        <label>Item ID<input name="item_id" value="TRY-001" required></label>
+        <label>Quantity<input name="quantity" type="number" step="1" value="1"></label>
+        <label>Unit<input name="unit" value="EA"></label>
+        <label>Plant<input name="plant" value="1100" list="plants"><datalist id="plants"></datalist></label>
+        <label>Required date<input name="required_date" type="date" value="2026-12-15"></label>
+        <label>Reference (optional)<select name="reference_id" id="references"><option value="">No reference</option></select></label>
+      </div>
+      <p class="muted" id="fixture-note"></p>
+      <button type="submit" id="evaluate" disabled>Evaluate request</button>
+      <div role="status" aria-live="polite" id="run-state">Loading model details…</div>
+    </form>
+  </section>
+  <section class="panel" id="result" aria-live="polite">
+    <h2>Decision</h2>
+    <p class="muted">Your result will appear here, including clarification requests and evidence from the mock reference service.</p>
+  </section>
+</main>
+<footer id="model-note">All inference runs on this computer. The app does not save your requests.</footer>
+<script>
+const form=document.querySelector('#request-form'), result=document.querySelector('#result'), state=document.querySelector('#run-state'), submit=document.querySelector('#evaluate');
+const labels={MG_MOTORS:'Replacement motor',MG_CONVEYOR:'Conveyor roller',MG_GEARBOXES:'Gearbox',MG_BELTS:'Conveyor or drive belt',MG_BEARINGS:'Bearing',MG_SENSORS:'Proximity sensor',insufficient_evidence:'Item not resolved',mixed_scope:'Several item types',no_suitable_group:'Outside this catalog',satisfied:'Evidence complete',missing:'Evidence missing',conflicting:'Evidence conflicts',unclear:'Evidence ambiguous'};
+const messages={quantity:'Enter a positive whole-number quantity.',unit:'Use EA for the unit.',destination:'Choose a pilot plant: 1100 or 1200.',timing:'Enter a valid required date on or after the fixture evaluation date.',confirm_item_scope:'Confirm the requested item. The group prediction did not pass its fitted gate.',item_scope:'Identify one requested item type; separate different kinds of purchases.',confirm_identification:'Confirm the identifying specifications. This answer did not establish readiness.',replacement_identification:'Add the required specifications or resolve the reference selection.',confirm_reference:'Confirm the intended reference and any conflicting specifications.',unsupported_scope:'A buyer needs to choose a purchasing route outside this pilot catalog.',reference_master_data:'The mock reference service reports inconsistent master data; buyer investigation is required.'};
+const statuses={ready_for_buyer_review:['Ready for buyer review','The fitted prototype gates passed and the required fields are valid. A buyer still needs to review this request.','ready'],clarification_needed:['Clarification needed','Resolve the items below, then evaluate again.','clarify'],buyer_review_required:['Buyer review required','This request needs a buyer or master-data investigation.','clarify'],evaluation_unavailable:['Evaluation unavailable','The model could not complete an assessment. No readiness decision was made.','']};
+const examples=[['Complete motor','Supply a replacement motor rated 5.5 kW, 400 V, three-phase.',''],['Missing specs','Need a replacement motor.',''],['Roller','Supply a replacement conveyor roller, diameter 50 mm and length 500 mm.',''],['Like for like','Replace the motor with the same model, like for like.','REF-MOTOR-400'],['Ambiguous reference','Replace the motor with the same model, like for like.','REF-MOTOR-AMBIGUOUS'],['Outside catalog','Supply a replacement hydraulic pump.','']];
+for(const [label,text,reference] of examples){const b=document.createElement('button');b.type='button';b.className='secondary';b.textContent=label;b.onclick=()=>{form.elements.description.value=text;form.elements.reference_id.value=reference};document.querySelector('#examples').append(b)}
+function node(tag,text,parent,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;if(parent)parent.append(n);return n}
+function details(title,value){const d=node('details',undefined,result);node('summary',title,d);node('pre',JSON.stringify(value,null,2),d)}
+function show(data){result.replaceChildren();node('h2','Decision',result);if(data.http_status!==200){node('p',data.error||'Evaluation unavailable',result,'error');return}
+  const [title,description,cls]=statuses[data.status]||['Evaluation unavailable','No readiness decision was made.',''];const box=node('div',undefined,result,'status '+cls);node('div',title,box,'result-title');node('p',description,box);
+  const facts=node('div',undefined,result,'facts');for(const [label,value,accepted] of [['Predicted purchase group',data.group,data.group_accepted],['Predicted identification',data.identification,data.identification_accepted]]){const f=node('div',undefined,facts,'fact');node('small',label,f);node('strong',value?(labels[value]||value):'Not evaluated',f);if(value&&!accepted)node('small','Fitted gate not passed',f)}
+  const issues=[...(data.clarification_ids||[]),...(data.review_ids||[])];if(issues.length){const list=node('ul',undefined,result);for(const id of issues)node('li',id==='replacement_identification'&&data.reference_status==='not_provided'?'Add the required identifying specifications.':messages[id]||id,list)}
+  for(const notice of data.notices||[])node('p',notice.message,result,'muted');
+  node('p',`CPU inference: ${Math.round(data.diagnostics.elapsed_ms)} ms · ${data.diagnostics.question_count} model question(s)`,result,'muted');
+  const scores=node('details',undefined,result);node('summary','Model scores and fitted gates',scores);node('p','Scores describe this synthetic prototype. They are not a measured probability of correctness on your own requests.',scores,'muted');
+  for(const [key,j] of Object.entries(data.judgments||{})){const q=node('div',undefined,scores,'question');const questionLabel=key==='material_group'?'Purchase group':key.startsWith('attribute:')?key.slice(10).replaceAll('_',' '):key==='holistic_identification'?'Overall evidence judgment':'Identification';node('strong',questionLabel,q);node('p',`Selected: ${labels[j.choice]||j.choice} · ${j.accepted?'Gate passed':'Gate not passed'} · ${j.composition?'Combined required checks':j.threshold==null?'No supported fitted threshold':`Threshold ${j.threshold.toFixed(4)}`}`,q,'muted');
+    if(j.probabilities)for(const [label,p] of Object.entries(j.probabilities)){const row=node('div',undefined,q,'score');node('span',labels[label]||label,row);node('span',`${(p*100).toFixed(2)}%`,row);const t=node('div',undefined,row,'track');const fill=node('div',undefined,t,'fill');fill.style.width=`${p*100}%`}else node('p',j.composition?'Combined from individually gated evidence judgments; no overall probability is asserted.':'Determined by a typed reference check.',q,'muted');}
+  if(data.resolved_reference)details('Reference evidence from the application',data.resolved_reference);details('Full API result',data);
+}
+form.addEventListener('submit',async e=>{e.preventDefault();submit.disabled=true;state.textContent='Evaluating on CPU…';const request=Object.fromEntries(new FormData(form));for(const key of Object.keys(request)){if(request[key]==='')delete request[key]}if('quantity' in request)request.quantity=Number(request.quantity);
+  try{const response=await fetch('/evaluate-item',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request)});const data=await response.json();show(data);state.textContent=response.ok?'Evaluation complete.':data.error||'Request failed.'}catch(error){state.textContent='Could not reach the local model. Check that the server is running.'}finally{submit.disabled=false}});
+fetch('/model').then(r=>{if(!r.ok)throw Error();return r.json()}).then(m=>{for(const id of Object.keys(m.references)){const option=node('option',id,document.querySelector('#references'));option.value=id}for(const id of m.plants){const o=node('option',undefined,document.querySelector('#plants'));o.value=id}document.querySelector('#model-version').textContent=m.model_name.split(' ').pop()+' · CPU';document.title=m.model_name+' · Model workshop';const groups=Object.keys(m.catalog).filter(k=>k.startsWith('MG_'));document.querySelector('#model-description').textContent='Recognize the requested product category, then check its identifying information. Supported categories: '+groups.map(k=>labels[k]||k).join(', ')+'.';document.querySelector('#fixture-note').textContent=`Fictional policy snapshot: ${m.evaluation_date}. Optional references add evidence from a local mock service.`;document.querySelector('#model-note').textContent=`CPU · ${m.training_cases.toLocaleString('en-US')} synthetic training requests · No independent human evaluation · Artifact ${m.artifact_identity.slice(0,12)}. Requests are not saved.`;state.textContent='Model ready.';submit.disabled=false}).catch(()=>{state.textContent='Model details unavailable. Start the local server and reload.'});
+</script>
+</html>

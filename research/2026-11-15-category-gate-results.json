@@ -1,0 +1,2445 @@
+{
+  "kind": "experimental_demo_category_gate_update",
+  "date": "2026-11-15",
+  "artifact_identity": "82bd496705c18bd8355baf4555dc61d08e4010f94519bb95c1dbadcaa368f98a",
+  "calibration_identity": "4df4339744a865859f4cf2d71741d3713866aced0537378ee174d82d5b851de0",
+  "model_identity": "071ec96c3d010985a0a44a166956c95764a930a089e96fba5def921a2b5e7eda",
+  "parent_artifact_identity": "90e3527df5c3325b5f15d7b02bd91a3d01c9be58fdc9538f8f46dd450688eb8f",
+  "weights_changed": false,
+  "regressions_passed": true,
+  "regression_failures": [],
+  "full_quality_qualified": false,
+  "reserved_evaluation_used": false,
+  "model_promoted": false,
+  "evidence_snapshot": {
+    "date": "2026-11-15",
+    "blind": false,
+    "human_reviewed": false,
+    "exposed100": {
+      "correct_ready": 25,
+      "truly_ready": 34,
+      "false_ready": 0,
+      "identification_f1": 0.7062,
+      "correct_status": 91,
+      "cases": 100
+    },
+    "previous_exposed100": {
+      "correct_ready": 23,
+      "truly_ready": 34,
+      "false_ready": 0,
+      "identification_f1": 0.6572,
+      "correct_status": 89,
+      "cases": 100
+    },
+    "threshold_selection": {
+      "predicted_ready": 693,
+      "false_ready": 1,
+      "safety_false_ready": 0
+    },
+    "challenge_identification_f1": 0.5192699490662139,
+    "expanded_identification_f1": 0.8496281776767107,
+    "identification_target": 0.85,
+    "constrained_cpu_requalified": false,
+    "source": "research/2026-11-15-category-gate-results.json"
+  },
+  "calibration_and_verification": {
+    "kind": "category_gate_demo_only_export",
+    "parent_artifact_identity": "90e3527df5c3325b5f15d7b02bd91a3d01c9be58fdc9538f8f46dd450688eb8f",
+    "artifact_identity": "82bd496705c18bd8355baf4555dc61d08e4010f94519bb95c1dbadcaa368f98a",
+    "calibration_identity": "4df4339744a865859f4cf2d71741d3713866aced0537378ee174d82d5b851de0",
+    "model_identity": "071ec96c3d010985a0a44a166956c95764a930a089e96fba5def921a2b5e7eda",
+    "weights_changed": false,
+    "original_threshold_selection": {
+      "primary_families": 1624,
+      "group": {
+        "observations": 1624,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_label": {
+          "MG_MOTORS": {
+            "support": 232,
+            "predicted": 232,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "MG_CONVEYOR": {
+            "support": 207,
+            "predicted": 207,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "MG_GEARBOXES": {
+            "support": 227,
+            "predicted": 227,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "MG_BELTS": {
+            "support": 246,
+            "predicted": 246,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "MG_BEARINGS": {
+            "support": 241,
+            "predicted": 241,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "MG_SENSORS": {
+            "support": 223,
+            "predicted": 223,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "insufficient_evidence": {
+            "support": 80,
+            "predicted": 80,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "mixed_scope": {
+            "support": 78,
+            "predicted": 78,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "no_suitable_group": {
+            "support": 90,
+            "predicted": 90,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "confusion_matrix": {
+          "MG_MOTORS": {
+            "MG_MOTORS": 232,
+            "MG_CONVEYOR": 0,
+            "MG_GEARBOXES": 0,
+            "MG_BELTS": 0,
+            "MG_BEARINGS": 0,
+            "MG_SENSORS": 0,
+            "insufficient_evidence": 0,
+            "mixed_scope": 0,
+            "no_suitable_group": 0
+          },
+          "MG_CONVEYOR": {
+            "MG_MOTORS": 0,
+            "MG_CONVEYOR": 207,
+            "MG_GEARBOXES": 0,
+            "MG_BELTS": 0,
+            "MG_BEARINGS": 0,
+            "MG_SENSORS": 0,
+            "insufficient_evidence": 0,
+            "mixed_scope": 0,
+            "no_suitable_group": 0
+          },
+          "MG_GEARBOXES": {
+            "MG_MOTORS": 0,
+            "MG_CONVEYOR": 0,
+            "MG_GEARBOXES": 227,
+            "MG_BELTS": 0,
+            "MG_BEARINGS": 0,
+            "MG_SENSORS": 0,
+            "insufficient_evidence": 0,
+            "mixed_scope": 0,
+            "no_suitable_group": 0
+          },
+          "MG_BELTS": {
+            "MG_MOTORS": 0,
+            "MG_CONVEYOR": 0,
+            "MG_GEARBOXES": 0,
+            "MG_BELTS": 246,
+            "MG_BEARINGS": 0,
+            "MG_SENSORS": 0,
+            "insufficient_evidence": 0,
+            "mixed_scope": 0,
+            "no_suitable_group": 0
+          },
+          "MG_BEARINGS": {
+            "MG_MOTORS": 0,
+            "MG_CONVEYOR": 0,
+            "MG_GEARBOXES": 0,
+            "MG_BELTS": 0,
+            "MG_BEARINGS": 241,
+            "MG_SENSORS": 0,
+            "insufficient_evidence": 0,
+            "mixed_scope": 0,
+            "no_suitable_group": 0
+          },
+          "MG_SENSORS": {
+            "MG_MOTORS": 0,
+            "MG_CONVEYOR": 0,
+            "MG_GEARBOXES": 0,
+            "MG_BELTS": 0,
+            "MG_BEARINGS": 0,
+            "MG_SENSORS": 223,
+            "insufficient_evidence": 0,
+            "mixed_scope": 0,
+            "no_suitable_group": 0
+          },
+          "insufficient_evidence": {
+            "MG_MOTORS": 0,
+            "MG_CONVEYOR": 0,
+            "MG_GEARBOXES": 0,
+            "MG_BELTS": 0,
+            "MG_BEARINGS": 0,
+            "MG_SENSORS": 0,
+            "insufficient_evidence": 80,
+            "mixed_scope": 0,
+            "no_suitable_group": 0
+          },
+          "mixed_scope": {
+            "MG_MOTORS": 0,
+            "MG_CONVEYOR": 0,
+            "MG_GEARBOXES": 0,
+            "MG_BELTS": 0,
+            "MG_BEARINGS": 0,
+            "MG_SENSORS": 0,
+            "insufficient_evidence": 0,
+            "mixed_scope": 78,
+            "no_suitable_group": 0
+          },
+          "no_suitable_group": {
+            "MG_MOTORS": 0,
+            "MG_CONVEYOR": 0,
+            "MG_GEARBOXES": 0,
+            "MG_BELTS": 0,
+            "MG_BEARINGS": 0,
+            "MG_SENSORS": 0,
+            "insufficient_evidence": 0,
+            "mixed_scope": 0,
+            "no_suitable_group": 90
+          }
+        }
+      },
+      "supported_group_accuracy": 1.0,
+      "routing": {
+        "cases": 1624,
+        "exact_matches": 1518,
+        "status_accuracy": 0.9692118226600985,
+        "ready_precision": {
+          "estimate": 0.9985569985569985,
+          "lower": 0.9918720047154936,
+          "upper": 0.9997452293816567,
+          "support": 693
+        },
+        "ready_recall": 0.9414965986394558,
+        "truly_ready": 735,
+        "predicted_ready": 693,
+        "false_ready": 1,
+        "ready_rate": 0.4267241379310345,
+        "clarification_rate": 0.521551724137931,
+        "buyer_review_rate": 0.05172413793103448,
+        "status_only_ready_precision": {
+          "estimate": 0.9985569985569985,
+          "lower": 0.9918720047154936,
+          "upper": 0.9997452293816567,
+          "support": 693
+        },
+        "status_only_ready_recall": 0.9414965986394558,
+        "ready_correctness": "Expected Ready plus correct product group and identification"
+      },
+      "actual_identification": {
+        "observations": 1376,
+        "accuracy": 0.9534883720930233,
+        "macro_f1": 0.7386471278915703,
+        "per_label": {
+          "satisfied": {
+            "support": 750,
+            "predicted": 707,
+            "precision": 0.9985855728429985,
+            "recall": 0.9413333333333334,
+            "f1": 0.969114619080302
+          },
+          "missing": {
+            "support": 206,
+            "predicted": 206,
+            "precision": 0.9271844660194175,
+            "recall": 0.9271844660194175,
+            "f1": 0.9271844660194175
+          },
+          "conflicting": {
+            "support": 324,
+            "predicted": 330,
+            "precision": 0.9757575757575757,
+            "recall": 0.9938271604938271,
+            "f1": 0.9847094801223242
+          },
+          "unclear": {
+            "support": 96,
+            "predicted": 133,
+            "precision": 0.6992481203007519,
+            "recall": 0.96875,
+            "f1": 0.8122270742358079
+          },
+          "incorrect_group_or_not_evaluated": {
+            "support": 0,
+            "predicted": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "confusion_matrix": {
+          "satisfied": {
+            "satisfied": 706,
+            "missing": 13,
+            "conflicting": 6,
+            "unclear": 25,
+            "incorrect_group_or_not_evaluated": 0
+          },
+          "missing": {
+            "satisfied": 1,
+            "missing": 191,
+            "conflicting": 1,
+            "unclear": 13,
+            "incorrect_group_or_not_evaluated": 0
+          },
+          "conflicting": {
+            "satisfied": 0,
+            "missing": 0,
+            "conflicting": 322,
+            "unclear": 2,
+            "incorrect_group_or_not_evaluated": 0
+          },
+          "unclear": {
+            "satisfied": 0,
+            "missing": 2,
+            "conflicting": 1,
+            "unclear": 93,
+            "incorrect_group_or_not_evaluated": 0
+          },
+          "incorrect_group_or_not_evaluated": {
+            "satisfied": 0,
+            "missing": 0,
+            "conflicting": 0,
+            "unclear": 0,
+            "incorrect_group_or_not_evaluated": 0
+          }
+        },
+        "macro_f1_over_true_identification_outcomes": 0.9233089098644629,
+        "incorrect_group_or_not_evaluated": 0,
+        "includes_deterministic_type_checks": true
+      },
+      "actual_identification_macro_f1": 0.9233089098644629,
+      "oracle_identification": {
+        "observations": 1376,
+        "accuracy": 0.9534883720930233,
+        "macro_f1": 0.7386471278915703,
+        "per_label": {
+          "satisfied": {
+            "support": 750,
+            "predicted": 707,
+            "precision": 0.9985855728429985,
+            "recall": 0.9413333333333334,
+            "f1": 0.969114619080302
+          },
+          "missing": {
+            "support": 206,
+            "predicted": 206,
+            "precision": 0.9271844660194175,
+            "recall": 0.9271844660194175,
+            "f1": 0.9271844660194175
+          },
+          "conflicting": {
+            "support": 324,
+            "predicted": 330,
+            "precision": 0.9757575757575757,
+            "recall": 0.9938271604938271,
+            "f1": 0.9847094801223242
+          },
+          "unclear": {
+            "support": 96,
+            "predicted": 133,
+            "precision": 0.6992481203007519,
+            "recall": 0.96875,
+            "f1": 0.8122270742358079
+          },
+          "null": {
+            "support": 0,
+            "predicted": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "confusion_matrix": {
+          "satisfied": {
+            "satisfied": 706,
+            "missing": 13,
+            "conflicting": 6,
+            "unclear": 25,
+            "null": 0
+          },
+          "missing": {
+            "satisfied": 1,
+            "missing": 191,
+            "conflicting": 1,
+            "unclear": 13,
+            "null": 0
+          },
+          "conflicting": {
+            "satisfied": 0,
+            "missing": 0,
+            "conflicting": 322,
+            "unclear": 2,
+            "null": 0
+          },
+          "unclear": {
+            "satisfied": 0,
+            "missing": 2,
+            "conflicting": 1,
+            "unclear": 93,
+            "null": 0
+          },
+          "null": {
+            "satisfied": 0,
+            "missing": 0,
+            "conflicting": 0,
+            "unclear": 0,
+            "null": 0
+          }
+        }
+      },
+      "oracle_identification_macro_f1": 0.9233089098644629,
+      "safety_cases": 668,
+      "safety_false_ready": 0,
+      "base_eligible": true,
+      "eligible": true,
+      "selection_rank": [
+        true,
+        0,
+        -1,
+        0.9233089098644629,
+        0.9233089098644629
+      ]
+    },
+    "expanded_verification": {
+      "version": "pooled-category-acceptance-1",
+      "parent_artifact_identity": "90e3527df5c3325b5f15d7b02bd91a3d01c9be58fdc9538f8f46dd450688eb8f",
+      "model_identity": "071ec96c3d010985a0a44a166956c95764a930a089e96fba5def921a2b5e7eda",
+      "category_selection": {
+        "version": "pooled-category-acceptance-1",
+        "threshold": 0.5,
+        "observations": 1300,
+        "observed_errors": 31,
+        "candidates": [
+          {
+            "threshold": 0.5,
+            "accepted": 1267,
+            "correct": 1249,
+            "errors": 18,
+            "precision": {
+              "estimate": 0.9857932123125493,
+              "lower": 0.9776546863266506,
+              "upper": 0.9909948580015098,
+              "support": 1267
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9764098230971759,
+                "upper": 1.0,
+                "support": 159
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 0.9946808510638298,
+                "lower": 0.9704901704657026,
+                "upper": 0.9990604216919924,
+                "support": 188
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 0.9836956521739131,
+                "lower": 0.9531678111387575,
+                "upper": 0.9944398209437405,
+                "support": 184
+              },
+              "insufficient_evidence": {
+                "estimate": 0.9861111111111112,
+                "lower": 0.9254339785252386,
+                "upper": 0.9975440481170943,
+                "support": 72
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9273021807795035,
+                "upper": 0.9999999999999999,
+                "support": 49
+              },
+              "no_suitable_group": {
+                "estimate": 0.87,
+                "lower": 0.7901964855992357,
+                "upper": 0.9224283257275948,
+                "support": 100
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.6,
+            "accepted": 1258,
+            "correct": 1246,
+            "errors": 12,
+            "precision": {
+              "estimate": 0.9904610492845787,
+              "lower": 0.983400870039128,
+              "upper": 0.9945349802802025,
+              "support": 1258
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9764098230971759,
+                "upper": 1.0,
+                "support": 159
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 0.9836956521739131,
+                "lower": 0.9531678111387575,
+                "upper": 0.9944398209437405,
+                "support": 184
+              },
+              "insufficient_evidence": {
+                "estimate": 0.9861111111111112,
+                "lower": 0.9254339785252386,
+                "upper": 0.9975440481170943,
+                "support": 72
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9273021807795035,
+                "upper": 0.9999999999999999,
+                "support": 49
+              },
+              "no_suitable_group": {
+                "estimate": 0.9130434782608695,
+                "lower": 0.8376974325974105,
+                "upper": 0.9552788110362063,
+                "support": 92
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 1247,
+            "correct": 1237,
+            "errors": 10,
+            "precision": {
+              "estimate": 0.991980753809142,
+              "lower": 0.985301341526046,
+              "upper": 0.9956383222078601,
+              "support": 1247
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9764098230971759,
+                "upper": 1.0,
+                "support": 159
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 0.9836956521739131,
+                "lower": 0.9531678111387575,
+                "upper": 0.9944398209437405,
+                "support": 184
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9472627418109483,
+                "upper": 1.0,
+                "support": 69
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9244423958360037,
+                "upper": 1.0,
+                "support": 47
+              },
+              "no_suitable_group": {
+                "estimate": 0.9186046511627907,
+                "lower": 0.8413981733460679,
+                "upper": 0.9600135684612175,
+                "support": 86
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 1236,
+            "correct": 1231,
+            "errors": 5,
+            "precision": {
+              "estimate": 0.9959546925566343,
+              "lower": 0.9905652196999921,
+              "upper": 0.9982708861406209,
+              "support": 1236
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9764098230971759,
+                "upper": 1.0,
+                "support": 159
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 0.9836956521739131,
+                "lower": 0.9531678111387575,
+                "upper": 0.9944398209437405,
+                "support": 184
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9465286634799296,
+                "upper": 1.0,
+                "support": 68
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9244423958360037,
+                "upper": 1.0,
+                "support": 47
+              },
+              "no_suitable_group": {
+                "estimate": 0.9736842105263158,
+                "lower": 0.9090337890134194,
+                "upper": 0.9927533409248718,
+                "support": 76
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.85,
+            "accepted": 1226,
+            "correct": 1224,
+            "errors": 2,
+            "precision": {
+              "estimate": 0.99836867862969,
+              "lower": 0.9940714896043266,
+              "upper": 0.999552518787606,
+              "support": 1226
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9764098230971759,
+                "upper": 1.0,
+                "support": 159
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 0.9945054945054945,
+                "lower": 0.9695380897362275,
+                "upper": 0.9990294255116478,
+                "support": 182
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9457738606086981,
+                "upper": 0.9999999999999998,
+                "support": 67
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9229264369144198,
+                "upper": 1.0,
+                "support": 46
+              },
+              "no_suitable_group": {
+                "estimate": 0.9857142857142858,
+                "lower": 0.9234181286879168,
+                "upper": 0.9974737535421097,
+                "support": 70
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 1213,
+            "correct": 1211,
+            "errors": 2,
+            "precision": {
+              "estimate": 0.998351195383347,
+              "lower": 0.9940081693519209,
+              "upper": 0.9995477217924409,
+              "support": 1213
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9762640620723142,
+                "upper": 1.0,
+                "support": 158
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 0.9945054945054945,
+                "lower": 0.9695380897362275,
+                "upper": 0.9990294255116478,
+                "support": 182
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9449974429864586,
+                "upper": 0.9999999999999999,
+                "support": 66
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9197043962415192,
+                "upper": 1.0,
+                "support": 44
+              },
+              "no_suitable_group": {
+                "estimate": 0.9836065573770492,
+                "lower": 0.9128113995535841,
+                "upper": 0.9971002692007002,
+                "support": 61
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.925,
+            "accepted": 1206,
+            "correct": 1205,
+            "errors": 1,
+            "precision": {
+              "estimate": 0.9991708126036484,
+              "lower": 0.9953181023872514,
+              "upper": 0.9998536130651284,
+              "support": 1206
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9762640620723142,
+                "upper": 1.0,
+                "support": 158
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 0.9945054945054945,
+                "lower": 0.9695380897362275,
+                "upper": 0.9990294255116478,
+                "support": 182
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9449974429864586,
+                "upper": 0.9999999999999999,
+                "support": 66
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9197043962415192,
+                "upper": 1.0,
+                "support": 44
+              },
+              "no_suitable_group": {
+                "estimate": 1.0,
+                "lower": 0.9335864119091037,
+                "upper": 1.0,
+                "support": 54
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 1194,
+            "correct": 1193,
+            "errors": 1,
+            "precision": {
+              "estimate": 0.9991624790619765,
+              "lower": 0.9952712039126077,
+              "upper": 0.9998521416873638,
+              "support": 1194
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9762640620723142,
+                "upper": 1.0,
+                "support": 158
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 0.9945054945054945,
+                "lower": 0.9695380897362275,
+                "upper": 0.9990294255116478,
+                "support": 182
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9449974429864586,
+                "upper": 0.9999999999999999,
+                "support": 66
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.916201209134296,
+                "upper": 0.9999999999999999,
+                "support": 42
+              },
+              "no_suitable_group": {
+                "estimate": 1.0,
+                "lower": 0.9197043962415192,
+                "upper": 1.0,
+                "support": 44
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.975,
+            "accepted": 1190,
+            "correct": 1190,
+            "errors": 0,
+            "precision": {
+              "estimate": 1.0,
+              "lower": 0.9967822705499866,
+              "upper": 0.9999999999999999,
+              "support": 1190
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9762640620723142,
+                "upper": 1.0,
+                "support": 158
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 1.0,
+                "lower": 0.979217547593473,
+                "upper": 1.0,
+                "support": 181
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9441984686771432,
+                "upper": 1.0,
+                "support": 65
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9123783988027135,
+                "upper": 1.0,
+                "support": 40
+              },
+              "no_suitable_group": {
+                "estimate": 1.0,
+                "lower": 0.9197043962415192,
+                "upper": 1.0,
+                "support": 44
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 1182,
+            "correct": 1182,
+            "errors": 0,
+            "precision": {
+              "estimate": 1.0,
+              "lower": 0.9967605628963971,
+              "upper": 0.9999999999999998,
+              "support": 1182
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9762640620723142,
+                "upper": 1.0,
+                "support": 158
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 1.0,
+                "lower": 0.979217547593473,
+                "upper": 1.0,
+                "support": 181
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9441984686771432,
+                "upper": 1.0,
+                "support": 65
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9103331462924287,
+                "upper": 1.0,
+                "support": 39
+              },
+              "no_suitable_group": {
+                "estimate": 1.0,
+                "lower": 0.9059421741627975,
+                "upper": 1.0,
+                "support": 37
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.995,
+            "accepted": 1172,
+            "correct": 1172,
+            "errors": 0,
+            "precision": {
+              "estimate": 1.0,
+              "lower": 0.9967330129484063,
+              "upper": 0.9999999999999999,
+              "support": 1172
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9783995315481122,
+                "upper": 1.0,
+                "support": 174
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9762640620723142,
+                "upper": 1.0,
+                "support": 158
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9776453316501321,
+                "upper": 1.0,
+                "support": 168
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9798709418570136,
+                "upper": 1.0,
+                "support": 187
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9782773855954833,
+                "upper": 0.9999999999999999,
+                "support": 173
+              },
+              "MG_SENSORS": {
+                "estimate": 1.0,
+                "lower": 0.979217547593473,
+                "upper": 1.0,
+                "support": 181
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9441984686771432,
+                "upper": 1.0,
+                "support": 65
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.9059421741627975,
+                "upper": 1.0,
+                "support": 37
+              },
+              "no_suitable_group": {
+                "estimate": 1.0,
+                "lower": 0.8830302015002593,
+                "upper": 1.0,
+                "support": 29
+              }
+            },
+            "eligible": true
+          },
+          {
+            "threshold": 0.999,
+            "accepted": 989,
+            "correct": 989,
+            "errors": 0,
+            "precision": {
+              "estimate": 1.0,
+              "lower": 0.9961308436643479,
+              "upper": 1.0,
+              "support": 989
+            },
+            "per_outcome": {
+              "MG_MOTORS": {
+                "estimate": 1.0,
+                "lower": 0.9771125748805723,
+                "upper": 0.9999999999999999,
+                "support": 164
+              },
+              "MG_CONVEYOR": {
+                "estimate": 1.0,
+                "lower": 0.9676757685506868,
+                "upper": 0.9999999999999999,
+                "support": 115
+              },
+              "MG_GEARBOXES": {
+                "estimate": 1.0,
+                "lower": 0.9741909354347176,
+                "upper": 1.0,
+                "support": 145
+              },
+              "MG_BELTS": {
+                "estimate": 1.0,
+                "lower": 0.9785203115316479,
+                "upper": 1.0,
+                "support": 175
+              },
+              "MG_BEARINGS": {
+                "estimate": 1.0,
+                "lower": 0.9765538048284949,
+                "upper": 1.0,
+                "support": 160
+              },
+              "MG_SENSORS": {
+                "estimate": 1.0,
+                "lower": 0.9759670685625849,
+                "upper": 0.9999999999999999,
+                "support": 156
+              },
+              "insufficient_evidence": {
+                "estimate": 1.0,
+                "lower": 0.9179901967742088,
+                "upper": 1.0,
+                "support": 43
+              },
+              "mixed_scope": {
+                "estimate": 1.0,
+                "lower": 0.8388748419471806,
+                "upper": 1.0,
+                "support": 20
+              },
+              "no_suitable_group": {
+                "estimate": 1.0,
+                "lower": 0.7411670330319684,
+                "upper": 1.0,
+                "support": 11
+              }
+            },
+            "eligible": true
+          }
+        ],
+        "selected": {
+          "threshold": 0.5,
+          "accepted": 1267,
+          "correct": 1249,
+          "errors": 18,
+          "precision": {
+            "estimate": 0.9857932123125493,
+            "lower": 0.9776546863266506,
+            "upper": 0.9909948580015098,
+            "support": 1267
+          },
+          "per_outcome": {
+            "MG_MOTORS": {
+              "estimate": 1.0,
+              "lower": 0.9783995315481122,
+              "upper": 1.0,
+              "support": 174
+            },
+            "MG_CONVEYOR": {
+              "estimate": 1.0,
+              "lower": 0.9764098230971759,
+              "upper": 1.0,
+              "support": 159
+            },
+            "MG_GEARBOXES": {
+              "estimate": 1.0,
+              "lower": 0.9776453316501321,
+              "upper": 1.0,
+              "support": 168
+            },
+            "MG_BELTS": {
+              "estimate": 0.9946808510638298,
+              "lower": 0.9704901704657026,
+              "upper": 0.9990604216919924,
+              "support": 188
+            },
+            "MG_BEARINGS": {
+              "estimate": 1.0,
+              "lower": 0.9782773855954833,
+              "upper": 0.9999999999999999,
+              "support": 173
+            },
+            "MG_SENSORS": {
+              "estimate": 0.9836956521739131,
+              "lower": 0.9531678111387575,
+              "upper": 0.9944398209437405,
+              "support": 184
+            },
+            "insufficient_evidence": {
+              "estimate": 0.9861111111111112,
+              "lower": 0.9254339785252386,
+              "upper": 0.9975440481170943,
+              "support": 72
+            },
+            "mixed_scope": {
+              "estimate": 1.0,
+              "lower": 0.9273021807795035,
+              "upper": 0.9999999999999999,
+              "support": 49
+            },
+            "no_suitable_group": {
+              "estimate": 0.87,
+              "lower": 0.7901964855992357,
+              "upper": 0.9224283257275948,
+              "support": 100
+            }
+          },
+          "eligible": true
+        },
+        "selection": "lowest predeclared fixed-grid cutoff meeting pooled precision/support targets"
+      },
+      "category_verification": {
+        "threshold": 0.5,
+        "accepted": 1855,
+        "correct": 1851,
+        "errors": 4,
+        "precision": {
+          "estimate": 0.997843665768194,
+          "lower": 0.9944685223081348,
+          "upper": 0.9991611340756824,
+          "support": 1855
+        },
+        "per_outcome": {
+          "MG_MOTORS": {
+            "estimate": 0.9887640449438202,
+            "lower": 0.9674918542147533,
+            "upper": 0.996171541841574,
+            "support": 267
+          },
+          "MG_CONVEYOR": {
+            "estimate": 1.0,
+            "lower": 0.984181206786727,
+            "upper": 1.0,
+            "support": 239
+          },
+          "MG_GEARBOXES": {
+            "estimate": 1.0,
+            "lower": 0.9853848824385248,
+            "upper": 1.0,
+            "support": 259
+          },
+          "MG_BELTS": {
+            "estimate": 1.0,
+            "lower": 0.9863701428570234,
+            "upper": 0.9999999999999999,
+            "support": 278
+          },
+          "MG_BEARINGS": {
+            "estimate": 1.0,
+            "lower": 0.9861239756608055,
+            "upper": 1.0,
+            "support": 273
+          },
+          "MG_SENSORS": {
+            "estimate": 0.99609375,
+            "lower": 0.9782090246194175,
+            "upper": 0.9993101178330381,
+            "support": 256
+          },
+          "insufficient_evidence": {
+            "estimate": 1.0,
+            "lower": 0.9586234547637477,
+            "upper": 1.0,
+            "support": 89
+          },
+          "mixed_scope": {
+            "estimate": 1.0,
+            "lower": 0.9547219145675847,
+            "upper": 1.0,
+            "support": 81
+          },
+          "no_suitable_group": {
+            "estimate": 1.0,
+            "lower": 0.967122467834048,
+            "upper": 1.0,
+            "support": 113
+          }
+        },
+        "eligible": true
+      },
+      "complete_pipeline": {
+        "primary_families": 1912,
+        "group": {
+          "observations": 1912,
+          "accuracy": 0.9963389121338913,
+          "macro_f1": 0.9950660407087327,
+          "per_label": {
+            "MG_MOTORS": {
+              "support": 264,
+              "predicted": 267,
+              "precision": 0.9887640449438202,
+              "recall": 1.0,
+              "f1": 0.9943502824858756
+            },
+            "MG_CONVEYOR": {
+              "support": 239,
+              "predicted": 240,
+              "precision": 0.9958333333333333,
+              "recall": 1.0,
+              "f1": 0.9979123173277662
+            },
+            "MG_GEARBOXES": {
+              "support": 259,
+              "predicted": 259,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "MG_BELTS": {
+              "support": 278,
+              "predicted": 279,
+              "precision": 0.996415770609319,
+              "recall": 1.0,
+              "f1": 0.9982046678635548
+            },
+            "MG_BEARINGS": {
+              "support": 273,
+              "predicted": 273,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "MG_SENSORS": {
+              "support": 255,
+              "predicted": 257,
+              "precision": 0.9922178988326849,
+              "recall": 1.0,
+              "f1": 0.99609375
+            },
+            "insufficient_evidence": {
+              "support": 112,
+              "predicted": 112,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "mixed_scope": {
+              "support": 110,
+              "predicted": 106,
+              "precision": 1.0,
+              "recall": 0.9636363636363636,
+              "f1": 0.9814814814814815
+            },
+            "no_suitable_group": {
+              "support": 122,
+              "predicted": 119,
+              "precision": 1.0,
+              "recall": 0.9754098360655737,
+              "f1": 0.9875518672199171
+            }
+          },
+          "confusion_matrix": {
+            "MG_MOTORS": {
+              "MG_MOTORS": 264,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_CONVEYOR": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 239,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_GEARBOXES": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 259,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_BELTS": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 278,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_BEARINGS": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 273,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_SENSORS": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 255,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "insufficient_evidence": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 112,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "mixed_scope": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 1,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 1,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 2,
+              "insufficient_evidence": 0,
+              "mixed_scope": 106,
+              "no_suitable_group": 0
+            },
+            "no_suitable_group": {
+              "MG_MOTORS": 3,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 119
+            }
+          }
+        },
+        "supported_group_accuracy": 1.0,
+        "routing": {
+          "cases": 1912,
+          "exact_matches": 1711,
+          "status_accuracy": 0.952928870292887,
+          "ready_precision": {
+            "estimate": 0.9986702127659575,
+            "lower": 0.9925063605675543,
+            "upper": 0.9997652213197264,
+            "support": 752
+          },
+          "ready_recall": 0.9037304452466908,
+          "truly_ready": 831,
+          "predicted_ready": 752,
+          "false_ready": 1,
+          "ready_rate": 0.39330543933054396,
+          "clarification_rate": 0.5475941422594143,
+          "buyer_review_rate": 0.05910041841004184,
+          "status_only_ready_precision": {
+            "estimate": 0.9986702127659575,
+            "lower": 0.9925063605675543,
+            "upper": 0.9997652213197264,
+            "support": 752
+          },
+          "status_only_ready_recall": 0.9037304452466908,
+          "ready_correctness": "Expected Ready plus correct product group and identification"
+        },
+        "actual_identification": {
+          "observations": 1568,
+          "accuracy": 0.9107142857142857,
+          "macro_f1": 0.6797025421413686,
+          "per_label": {
+            "satisfied": {
+              "support": 846,
+              "predicted": 766,
+              "precision": 0.9986945169712794,
+              "recall": 0.9042553191489362,
+              "f1": 0.9491315136476427
+            },
+            "missing": {
+              "support": 254,
+              "predicted": 215,
+              "precision": 0.9302325581395349,
+              "recall": 0.7874015748031497,
+              "f1": 0.8528784648187633
+            },
+            "conflicting": {
+              "support": 372,
+              "predicted": 378,
+              "precision": 0.9788359788359788,
+              "recall": 0.9946236559139785,
+              "f1": 0.9866666666666666
+            },
+            "unclear": {
+              "support": 96,
+              "predicted": 209,
+              "precision": 0.4449760765550239,
+              "recall": 0.96875,
+              "f1": 0.6098360655737705
+            },
+            "incorrect_group_or_not_evaluated": {
+              "support": 0,
+              "predicted": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion_matrix": {
+            "satisfied": {
+              "satisfied": 765,
+              "missing": 13,
+              "conflicting": 6,
+              "unclear": 62,
+              "incorrect_group_or_not_evaluated": 0
+            },
+            "missing": {
+              "satisfied": 1,
+              "missing": 200,
+              "conflicting": 1,
+              "unclear": 52,
+              "incorrect_group_or_not_evaluated": 0
+            },
+            "conflicting": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 370,
+              "unclear": 2,
+              "incorrect_group_or_not_evaluated": 0
+            },
+            "unclear": {
+              "satisfied": 0,
+              "missing": 2,
+              "conflicting": 1,
+              "unclear": 93,
+              "incorrect_group_or_not_evaluated": 0
+            },
+            "incorrect_group_or_not_evaluated": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 0,
+              "unclear": 0,
+              "incorrect_group_or_not_evaluated": 0
+            }
+          },
+          "macro_f1_over_true_identification_outcomes": 0.8496281776767107,
+          "incorrect_group_or_not_evaluated": 0,
+          "includes_deterministic_type_checks": true
+        },
+        "actual_identification_macro_f1": 0.8496281776767107,
+        "oracle_identification": {
+          "observations": 1568,
+          "accuracy": 0.9107142857142857,
+          "macro_f1": 0.6797025421413686,
+          "per_label": {
+            "satisfied": {
+              "support": 846,
+              "predicted": 766,
+              "precision": 0.9986945169712794,
+              "recall": 0.9042553191489362,
+              "f1": 0.9491315136476427
+            },
+            "missing": {
+              "support": 254,
+              "predicted": 215,
+              "precision": 0.9302325581395349,
+              "recall": 0.7874015748031497,
+              "f1": 0.8528784648187633
+            },
+            "conflicting": {
+              "support": 372,
+              "predicted": 378,
+              "precision": 0.9788359788359788,
+              "recall": 0.9946236559139785,
+              "f1": 0.9866666666666666
+            },
+            "unclear": {
+              "support": 96,
+              "predicted": 209,
+              "precision": 0.4449760765550239,
+              "recall": 0.96875,
+              "f1": 0.6098360655737705
+            },
+            "null": {
+              "support": 0,
+              "predicted": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion_matrix": {
+            "satisfied": {
+              "satisfied": 765,
+              "missing": 13,
+              "conflicting": 6,
+              "unclear": 62,
+              "null": 0
+            },
+            "missing": {
+              "satisfied": 1,
+              "missing": 200,
+              "conflicting": 1,
+              "unclear": 52,
+              "null": 0
+            },
+            "conflicting": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 370,
+              "unclear": 2,
+              "null": 0
+            },
+            "unclear": {
+              "satisfied": 0,
+              "missing": 2,
+              "conflicting": 1,
+              "unclear": 93,
+              "null": 0
+            },
+            "null": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 0,
+              "unclear": 0,
+              "null": 0
+            }
+          }
+        },
+        "oracle_identification_macro_f1": 0.8496281776767107,
+        "safety_cases": 812,
+        "safety_false_ready": 0,
+        "base_eligible": false,
+        "eligible": false,
+        "selection_rank": [
+          false,
+          0,
+          -1,
+          0.8496281776767107,
+          0.8496281776767107
+        ]
+      },
+      "challenge_category_verification": {
+        "threshold": 0.5,
+        "accepted": 273,
+        "correct": 269,
+        "errors": 4,
+        "precision": {
+          "estimate": 0.9853479853479854,
+          "lower": 0.9629388159678316,
+          "upper": 0.9942877538128039,
+          "support": 273
+        },
+        "per_outcome": {
+          "MG_MOTORS": {
+            "estimate": 0.9142857142857143,
+            "lower": 0.7762072603410349,
+            "upper": 0.9704176317330301,
+            "support": 35
+          },
+          "MG_CONVEYOR": {
+            "estimate": 1.0,
+            "lower": 0.8928208017449293,
+            "upper": 1.0,
+            "support": 32
+          },
+          "MG_GEARBOXES": {
+            "estimate": 1.0,
+            "lower": 0.8928208017449293,
+            "upper": 1.0,
+            "support": 32
+          },
+          "MG_BELTS": {
+            "estimate": 1.0,
+            "lower": 0.8928208017449293,
+            "upper": 1.0,
+            "support": 32
+          },
+          "MG_BEARINGS": {
+            "estimate": 1.0,
+            "lower": 0.8928208017449293,
+            "upper": 1.0,
+            "support": 32
+          },
+          "MG_SENSORS": {
+            "estimate": 0.9696969696969697,
+            "lower": 0.846812746178811,
+            "upper": 0.9946305894631283,
+            "support": 33
+          },
+          "insufficient_evidence": {
+            "estimate": 1.0,
+            "lower": 0.8928208017449293,
+            "upper": 1.0,
+            "support": 32
+          },
+          "mixed_scope": {
+            "estimate": 1.0,
+            "lower": 0.8063923194655637,
+            "upper": 1.0,
+            "support": 16
+          },
+          "no_suitable_group": {
+            "estimate": 1.0,
+            "lower": 0.8830302015002593,
+            "upper": 1.0,
+            "support": 29
+          }
+        },
+        "eligible": true
+      },
+      "challenge_pipeline": {
+        "primary_families": 288,
+        "group": {
+          "observations": 288,
+          "accuracy": 0.9756944444444444,
+          "macro_f1": 0.9753671805543596,
+          "per_label": {
+            "MG_MOTORS": {
+              "support": 32,
+              "predicted": 35,
+              "precision": 0.9142857142857143,
+              "recall": 1.0,
+              "f1": 0.955223880597015
+            },
+            "MG_CONVEYOR": {
+              "support": 32,
+              "predicted": 33,
+              "precision": 0.9696969696969697,
+              "recall": 1.0,
+              "f1": 0.9846153846153847
+            },
+            "MG_GEARBOXES": {
+              "support": 32,
+              "predicted": 32,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "MG_BELTS": {
+              "support": 32,
+              "predicted": 33,
+              "precision": 0.9696969696969697,
+              "recall": 1.0,
+              "f1": 0.9846153846153847
+            },
+            "MG_BEARINGS": {
+              "support": 32,
+              "predicted": 32,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "MG_SENSORS": {
+              "support": 32,
+              "predicted": 34,
+              "precision": 0.9411764705882353,
+              "recall": 1.0,
+              "f1": 0.9696969696969697
+            },
+            "insufficient_evidence": {
+              "support": 32,
+              "predicted": 32,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "mixed_scope": {
+              "support": 32,
+              "predicted": 28,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1": 0.9333333333333333
+            },
+            "no_suitable_group": {
+              "support": 32,
+              "predicted": 29,
+              "precision": 1.0,
+              "recall": 0.90625,
+              "f1": 0.9508196721311475
+            }
+          },
+          "confusion_matrix": {
+            "MG_MOTORS": {
+              "MG_MOTORS": 32,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_CONVEYOR": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 32,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_GEARBOXES": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 32,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_BELTS": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 32,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_BEARINGS": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 32,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "MG_SENSORS": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 32,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "insufficient_evidence": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 32,
+              "mixed_scope": 0,
+              "no_suitable_group": 0
+            },
+            "mixed_scope": {
+              "MG_MOTORS": 0,
+              "MG_CONVEYOR": 1,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 1,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 2,
+              "insufficient_evidence": 0,
+              "mixed_scope": 28,
+              "no_suitable_group": 0
+            },
+            "no_suitable_group": {
+              "MG_MOTORS": 3,
+              "MG_CONVEYOR": 0,
+              "MG_GEARBOXES": 0,
+              "MG_BELTS": 0,
+              "MG_BEARINGS": 0,
+              "MG_SENSORS": 0,
+              "insufficient_evidence": 0,
+              "mixed_scope": 0,
+              "no_suitable_group": 29
+            }
+          }
+        },
+        "supported_group_accuracy": 1.0,
+        "routing": {
+          "cases": 288,
+          "exact_matches": 193,
+          "status_accuracy": 0.8611111111111112,
+          "ready_precision": {
+            "estimate": 1.0,
+            "lower": 0.9388706294732116,
+            "upper": 1.0,
+            "support": 59
+          },
+          "ready_recall": 0.6145833333333334,
+          "truly_ready": 96,
+          "predicted_ready": 59,
+          "false_ready": 0,
+          "ready_rate": 0.2048611111111111,
+          "clarification_rate": 0.6944444444444444,
+          "buyer_review_rate": 0.10069444444444445,
+          "status_only_ready_precision": {
+            "estimate": 1.0,
+            "lower": 0.9388706294732116,
+            "upper": 1.0,
+            "support": 59
+          },
+          "status_only_ready_recall": 0.6145833333333334,
+          "ready_correctness": "Expected Ready plus correct product group and identification"
+        },
+        "actual_identification": {
+          "observations": 192,
+          "accuracy": 0.6041666666666666,
+          "macro_f1": 0.41541595925297115,
+          "per_label": {
+            "satisfied": {
+              "support": 96,
+              "predicted": 59,
+              "precision": 1.0,
+              "recall": 0.6145833333333334,
+              "f1": 0.7612903225806451
+            },
+            "missing": {
+              "support": 48,
+              "predicted": 9,
+              "precision": 1.0,
+              "recall": 0.1875,
+              "f1": 0.3157894736842105
+            },
+            "conflicting": {
+              "support": 48,
+              "predicted": 48,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unclear": {
+              "support": 0,
+              "predicted": 76,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "incorrect_group_or_not_evaluated": {
+              "support": 0,
+              "predicted": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion_matrix": {
+            "satisfied": {
+              "satisfied": 59,
+              "missing": 0,
+              "conflicting": 0,
+              "unclear": 37,
+              "incorrect_group_or_not_evaluated": 0
+            },
+            "missing": {
+              "satisfied": 0,
+              "missing": 9,
+              "conflicting": 0,
+              "unclear": 39,
+              "incorrect_group_or_not_evaluated": 0
+            },
+            "conflicting": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 48,
+              "unclear": 0,
+              "incorrect_group_or_not_evaluated": 0
+            },
+            "unclear": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 0,
+              "unclear": 0,
+              "incorrect_group_or_not_evaluated": 0
+            },
+            "incorrect_group_or_not_evaluated": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 0,
+              "unclear": 0,
+              "incorrect_group_or_not_evaluated": 0
+            }
+          },
+          "macro_f1_over_true_identification_outcomes": 0.5192699490662139,
+          "incorrect_group_or_not_evaluated": 0,
+          "includes_deterministic_type_checks": true
+        },
+        "actual_identification_macro_f1": 0.5192699490662139,
+        "oracle_identification": {
+          "observations": 192,
+          "accuracy": 0.6041666666666666,
+          "macro_f1": 0.41541595925297115,
+          "per_label": {
+            "satisfied": {
+              "support": 96,
+              "predicted": 59,
+              "precision": 1.0,
+              "recall": 0.6145833333333334,
+              "f1": 0.7612903225806451
+            },
+            "missing": {
+              "support": 48,
+              "predicted": 9,
+              "precision": 1.0,
+              "recall": 0.1875,
+              "f1": 0.3157894736842105
+            },
+            "conflicting": {
+              "support": 48,
+              "predicted": 48,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "unclear": {
+              "support": 0,
+              "predicted": 76,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "null": {
+              "support": 0,
+              "predicted": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion_matrix": {
+            "satisfied": {
+              "satisfied": 59,
+              "missing": 0,
+              "conflicting": 0,
+              "unclear": 37,
+              "null": 0
+            },
+            "missing": {
+              "satisfied": 0,
+              "missing": 9,
+              "conflicting": 0,
+              "unclear": 39,
+              "null": 0
+            },
+            "conflicting": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 48,
+              "unclear": 0,
+              "null": 0
+            },
+            "unclear": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 0,
+              "unclear": 0,
+              "null": 0
+            },
+            "null": {
+              "satisfied": 0,
+              "missing": 0,
+              "conflicting": 0,
+              "unclear": 0,
+              "null": 0
+            }
+          }
+        },
+        "oracle_identification_macro_f1": 0.5192699490662139,
+        "safety_cases": 144,
+        "safety_false_ready": 0,
+        "base_eligible": false,
+        "eligible": false,
+        "selection_rank": [
+          false,
+          0,
+          0,
+          0.5192699490662139,
+          0.5192699490662139
+        ]
+      },
+      "driver_sha256": "53f2f0b5eab749ad2b2eb0fb1fb2290df8476d417eef77285a44a9963ec18ad1",
+      "challenge_files_sha256": {
+        "calibration": "0326fddc1fffb5b5af13a10b355129abeba5122116dc2fce85ce710b2d13bb17",
+        "threshold_selection": "0826c415046c6baf86332510afab68fd9c53ca7304b70a68a402b847a1fcad6d"
+      },
+      "challenge_false_ready": [],
+      "weights_changed": false,
+      "reserved_evaluation_used": false,
+      "author100_used_for_fitting": false,
+      "deployment_qualified": false
+    },
+    "scope": {
+      "demo_only": true,
+      "full_quality_qualified": false,
+      "expanded_verification_eligible": false,
+      "expanded_identification_f1": 0.8496281776767107,
+      "challenge_identification_f1": 0.5192699490662139,
+      "verification_report_sha256": "e00f99fa01aaf3b51f658ebeef94cb57348f5857996da190db541f713c33b6da",
+      "protocol_amendment_sha256": "af73b7cdb16e65f8469efc39bf47763df37a89a412401ab78e43aca253fb9da6"
+    },
+    "reserved_evaluation_used": false,
+    "deployment_qualified": false,
+    "source_sha256": "46089aa7fbd37f4b2ec3daa17c52fe20d649f6e40f2da6bad3574ef95a7f41f9"
+  },
+  "regression_metrics": {
+    "development_generated": {
+      "cases": 1536,
+      "predicted_ready": 659,
+      "correct_ready": 659,
+      "false_ready": 0,
+      "truly_ready": 673,
+      "ready_recall": 0.9792,
+      "status_match": 1516,
+      "group_match": 1523,
+      "identification_macro_f1_recomputed": 0.9673,
+      "native_cpu_ms": {
+        "threads": 2,
+        "p50": 219.87995802192017,
+        "p95": 294.34683397994377,
+        "note": "Native Apple Silicon timing; not the constrained-VM qualification"
+      }
+    },
+    "development_natural": {
+      "cases": 600,
+      "predicted_ready": 231,
+      "correct_ready": 231,
+      "false_ready": 0,
+      "truly_ready": 256,
+      "ready_recall": 0.9023,
+      "status_match": 573,
+      "group_match": 600,
+      "identification_macro_f1_recomputed": 0.9129,
+      "native_cpu_ms": {
+        "threads": 2,
+        "p50": 205.45958302682266,
+        "p95": 268.9324579841923,
+        "note": "Native Apple Silicon timing; not the constrained-VM qualification"
+      }
+    },
+    "exposed100": {
+      "cases": 100,
+      "predicted_ready": 25,
+      "correct_ready": 25,
+      "false_ready": 0,
+      "truly_ready": 34,
+      "ready_recall": 0.7353,
+      "status_match": 91,
+      "group_match": 94,
+      "identification_macro_f1_recomputed": 0.7062,
+      "native_cpu_ms": {
+        "threads": 2,
+        "p50": 202.28024999960326,
+        "p95": 279.68433301430196,
+        "note": "Native Apple Silicon timing; not the constrained-VM qualification"
+      }
+    },
+    "natural_training_400": {
+      "cases": 400,
+      "predicted_ready": 116,
+      "correct_ready": 116,
+      "false_ready": 0,
+      "truly_ready": 120,
+      "ready_recall": 0.9667,
+      "status_match": 396,
+      "group_match": 400,
+      "identification_macro_f1_recomputed": 0.9549,
+      "native_cpu_ms": {
+        "threads": 2,
+        "p50": 207.04529201611876,
+        "p95": 318.79995798226446,
+        "note": "Native Apple Silicon timing; not the constrained-VM qualification"
+      }
+    }
+  },
+  "reference_counterfactuals": {
+    "ready": 0,
+    "cases": 5,
+    "statuses": [
+      "clarification_needed",
+      "clarification_needed",
+      "clarification_needed",
+      "clarification_needed",
+      "clarification_needed"
+    ]
+  },
+  "language53": {
+    "cases": 53,
+    "group_and_identification_matches": 44,
+    "ready_where_not_expected": []
+  },
+  "wording_results": [
+    {
+      "case_id": "demo_belt",
+      "group": "MG_BELTS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "user_belt",
+      "group": "MG_BELTS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "reordered",
+      "group": "MG_BELTS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "broken",
+      "group": "MG_BELTS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "plain",
+      "group": "MG_BELTS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "incomplete",
+      "group": "MG_BELTS",
+      "identification": "missing",
+      "status": "clarification_needed"
+    },
+    {
+      "case_id": "conflict",
+      "group": "MG_BELTS",
+      "identification": "unclear",
+      "status": "clarification_needed"
+    },
+    {
+      "case_id": "motor-incomplete",
+      "group": "MG_MOTORS",
+      "identification": "missing",
+      "status": "clarification_needed"
+    },
+    {
+      "case_id": "motor-complete",
+      "group": "MG_MOTORS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "motor-reference",
+      "group": "MG_MOTORS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "motor-conflict",
+      "group": "MG_MOTORS",
+      "identification": "conflicting",
+      "status": "clarification_needed"
+    },
+    {
+      "case_id": "roller",
+      "group": "MG_CONVEYOR",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "gearbox",
+      "group": "MG_GEARBOXES",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "belt",
+      "group": "MG_BELTS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "bearing",
+      "group": "MG_BEARINGS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "sensor",
+      "group": "MG_SENSORS",
+      "identification": "satisfied",
+      "status": "ready_for_buyer_review"
+    },
+    {
+      "case_id": "outside",
+      "group": "no_suitable_group",
+      "identification": null,
+      "status": "clarification_needed"
+    }
+  ],
+  "receipts_sha256": {
+    "export-report.json": "942632e1dfb0e21908cb4de8096dad4faef66912ec836e35256f8793f4d01e87",
+    "candidate-evaluation.json": "a6ccff323411928ee502027492a2e16945cf1d6e8b30bfc64e7b201c26811363",
+    "wording-replay.json": "c6d8ce35595c040cbd746d80fc86a6dc195a4fcc037346bcd7ebd66cb7dbaf7a"
+  },
+  "source_sha256": "b07c9d93bd1647cab6f328eb313aa91d631b60260e1f390ad5c7c68e89c2093e"
+}

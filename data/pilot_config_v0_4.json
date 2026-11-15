@@ -1,0 +1,200 @@
+{
+  "contract_version": "pilot-0.4",
+  "catalog_version": "PILOT-CATALOG-3",
+  "evaluation_date": "2026-11-01",
+  "plants": [
+    "1100",
+    "1200"
+  ],
+  "catalog": {
+    "MG_MOTORS": "Standalone replacement electric motors, including conveyor drive motors.",
+    "MG_CONVEYOR": "Mechanical conveyor or idler rollers; excludes roller bearings.",
+    "MG_GEARBOXES": "Gearboxes, gear reducers and speed reducers.",
+    "MG_BELTS": "Replacement conveyor or drive belts.",
+    "MG_BEARINGS": "Mechanical ball or roller bearings.",
+    "MG_SENSORS": "Inductive proximity sensors and proximity switches.",
+    "insufficient_evidence": "Requested item or choice of item remains unresolved.",
+    "mixed_scope": "Multiple kinds of goods or goods plus services requested together.",
+    "no_suitable_group": "Identifiable purchase outside the supplied categories, including service-only requests."
+  },
+  "policies": {
+    "PILOT-MOTORS-2": {
+      "group": "MG_MOTORS",
+      "kind": "motor",
+      "required": [
+        "power_kw",
+        "voltage_v",
+        "phases"
+      ]
+    },
+    "PILOT-ROLLERS-2": {
+      "group": "MG_CONVEYOR",
+      "kind": "roller",
+      "required": [
+        "diameter_mm",
+        "length_mm"
+      ]
+    },
+    "PILOT-MOTORS-NO-PHASE-EXPERIMENT": {
+      "group": "MG_MOTORS",
+      "kind": "motor",
+      "required": [
+        "power_kw",
+        "voltage_v"
+      ],
+      "experimental": true
+    },
+    "PILOT-GEARBOX-1": {
+      "group": "MG_GEARBOXES",
+      "kind": "gearbox",
+      "required": [
+        "gear_ratio",
+        "shaft_diameter_mm"
+      ]
+    },
+    "PILOT-BELT-1": {
+      "group": "MG_BELTS",
+      "kind": "belt",
+      "required": [
+        "width_mm",
+        "length_mm",
+        "belt_profile"
+      ]
+    },
+    "PILOT-BEARING-1": {
+      "group": "MG_BEARINGS",
+      "kind": "bearing",
+      "required": [
+        "bore_mm",
+        "outer_diameter_mm",
+        "width_mm"
+      ]
+    },
+    "PILOT-SENSOR-1": {
+      "group": "MG_SENSORS",
+      "kind": "sensor",
+      "required": [
+        "sensing_distance_mm",
+        "supply_voltage_v",
+        "output_type"
+      ]
+    }
+  },
+  "default_policies": {
+    "MG_MOTORS": "PILOT-MOTORS-2",
+    "MG_CONVEYOR": "PILOT-ROLLERS-2",
+    "MG_GEARBOXES": "PILOT-GEARBOX-1",
+    "MG_BELTS": "PILOT-BELT-1",
+    "MG_BEARINGS": "PILOT-BEARING-1",
+    "MG_SENSORS": "PILOT-SENSOR-1"
+  },
+  "references": {
+    "REF-MOTOR-400": [
+      {
+        "component_id": "CV12-M1",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 400,
+        "phases": 3
+      }
+    ],
+    "REF-MOTOR-230": [
+      {
+        "component_id": "CV13-M1",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 230,
+        "phases": 3
+      }
+    ],
+    "REF-ROLLER-50": [
+      {
+        "component_id": "CV12-R1",
+        "kind": "roller",
+        "diameter_mm": 50,
+        "length_mm": 500
+      }
+    ],
+    "REF-MOTOR-AMBIGUOUS": [
+      {
+        "component_id": "CV12-M1",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 400,
+        "phases": 3
+      },
+      {
+        "component_id": "CV12-M2",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 230,
+        "phases": 3
+      }
+    ],
+    "REF-NOT-FOUND": [],
+    "REF-MOTOR-INCONSISTENT": [
+      {
+        "component_id": "CV14-M1",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 400,
+        "phases": 3
+      }
+    ],
+    "REF-GEARBOX-EXAMPLE": [
+      {
+        "component_id": "GEARBOX-A",
+        "kind": "gearbox",
+        "gear_ratio": 5,
+        "shaft_diameter_mm": 20
+      }
+    ],
+    "REF-BELT-EXAMPLE": [
+      {
+        "component_id": "BELT-A",
+        "kind": "belt",
+        "width_mm": 20,
+        "length_mm": 500,
+        "belt_profile": "A"
+      }
+    ],
+    "REF-BEARING-EXAMPLE": [
+      {
+        "component_id": "BEARING-A",
+        "kind": "bearing",
+        "bore_mm": 20,
+        "outer_diameter_mm": 62,
+        "width_mm": 20
+      }
+    ],
+    "REF-SENSOR-EXAMPLE": [
+      {
+        "component_id": "SENSOR-A",
+        "kind": "sensor",
+        "sensing_distance_mm": 5,
+        "supply_voltage_v": 12,
+        "output_type": "PNP"
+      }
+    ]
+  },
+  "renderer_version": "decision-row-1",
+  "identification_options": {
+    "satisfied": "Required evidence is complete, unambiguous, and consistent.",
+    "missing": "Required evidence is absent and no allowed reference supplies it.",
+    "conflicting": "Relevant affirmative evidence disagrees.",
+    "unclear": "Evidence is present but its meaning or selected component remains ambiguous."
+  },
+  "identification_rules": "Assess only required attributes. Use relevant affirmative facts; ignore negated/unrelated values. An unknown type/model number does not supply specifications or units. Accept written numbers and explicit unit variants. Like-for-like may use one selected matching-kind reference with required facts; otherwise require explicit specifications. Resolve candidates by relevant constraints, never position. Conflict overrides unclear, then missing, then satisfied. Do not convert hp to kW. Bare roller dimensions are ambiguous; diameter and length must be identified.",
+  "reference_integrity": {
+    "REF-MOTOR-INCONSISTENT": [
+      {
+        "field": "voltage_v",
+        "values": [
+          230,
+          400
+        ],
+        "source": "mock_reference_integrity_check"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "software_tests": {
+    "passed": 22,
+    "command": "python -m unittest discover -s tests"
+  },
+  "actual_cpu_smoke_cases": 10,
+  "source_scan": "Credential-pattern scan passed; cloud operations, private voice configuration and environment files excluded.",
+  "reserved_evaluation": "Not read or redistributed.",
+  "inference_bundle": "Installed from the prepared release archive; exact runtime hashes verified by DemoRuntime.",
+  "status": "local_public_release_candidate",
+  "publication": "GitHub destination requested; source and assets await first push/upload."
+}

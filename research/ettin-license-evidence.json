@@ -1,0 +1,11 @@
+{
+  "checked_date": "2026-11-02",
+  "repository": "jhu-clsp/ettin-encoder-150m",
+  "revision": "45d08642849e5c5701b162671ac811b7654bfd9f",
+  "declared_license": "mit",
+  "metadata_url": "https://huggingface.co/api/models/jhu-clsp/ettin-encoder-150m/revision/45d08642849e5c5701b162671ac811b7654bfd9f",
+  "model_card_url": "https://huggingface.co/jhu-clsp/ettin-encoder-150m/resolve/45d08642849e5c5701b162671ac811b7654bfd9f/README.md",
+  "model_card_sha256": "95b8dbb4c4ba78b2855bdfc6ebefe8eac4c39d63c20f92e2aced3f47cd7e1ff6",
+  "license_or_notice_files_in_snapshot": [],
+  "scope": "Upstream declared checkpoint/tokenizer repository license; not a full audit of training data or transitive dependencies."
+}

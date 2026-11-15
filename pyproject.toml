@@ -1,0 +1,16 @@
+[project]
+name = "prism-model-learning"
+version = "0.1.0"
+description = "Local development fixtures and a rules baseline for narrow procurement decisions"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+benchmark = [
+    "torch==2.9.1",
+    "transformers==4.57.3",
+    "tokenizers==0.22.2",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,18 @@
+{
+  "release_tag": "v0.1.0-demo",
+  "repository": "skye0402/narrow-decision-model",
+  "artifacts": {
+    "prism-cpu-demo.tar.gz": {
+      "sha256": "7dacad0bf4708be35f242f3ee2ed95c686d4ac02acddbc03a620dd75e116e0f5",
+      "bytes": 340903873
+    },
+    "training-inputs.tar.gz": {
+      "sha256": "21627ddaeaaa07ebc1a6c871f601972c76aac36387f96081cc23307c63711594",
+      "bytes": 8490501
+    },
+    "training-source.tar.gz": {
+      "sha256": "0813703bfa7f6f369fafd71b3fdfeccb5e383a304a5bcc271c3e8070151a50e7",
+      "bytes": 375423
+    }
+  }
+}

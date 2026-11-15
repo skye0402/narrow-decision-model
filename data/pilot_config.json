@@ -1,0 +1,122 @@
+{
+  "contract_version": "pilot-0.3",
+  "catalog_version": "PILOT-CATALOG-2",
+  "evaluation_date": "2026-11-01",
+  "plants": [
+    "1100",
+    "1200"
+  ],
+  "catalog": {
+    "MG_MOTORS": "Standalone replacement electric motors, including conveyor drive motors; excludes rollers, gearboxes, and service labor.",
+    "MG_CONVEYOR": "Replacement mechanical conveyor rollers only in this pilot; excludes motors, belts, complete conveyors, and services.",
+    "insufficient_evidence": "Requested item or alternatives are not resolved; ask the requester.",
+    "mixed_scope": "Several kinds of goods or services are requested together; ask to separate scope.",
+    "no_suitable_group": "The requested item is identifiable and outside this pilot catalog; buyer review."
+  },
+  "policies": {
+    "PILOT-MOTORS-2": {
+      "group": "MG_MOTORS",
+      "kind": "motor",
+      "required": [
+        "power_kw",
+        "voltage_v",
+        "phases"
+      ]
+    },
+    "PILOT-ROLLERS-2": {
+      "group": "MG_CONVEYOR",
+      "kind": "roller",
+      "required": [
+        "diameter_mm",
+        "length_mm"
+      ]
+    },
+    "PILOT-MOTORS-NO-PHASE-EXPERIMENT": {
+      "group": "MG_MOTORS",
+      "kind": "motor",
+      "required": [
+        "power_kw",
+        "voltage_v"
+      ],
+      "experimental": true
+    }
+  },
+  "default_policies": {
+    "MG_MOTORS": "PILOT-MOTORS-2",
+    "MG_CONVEYOR": "PILOT-ROLLERS-2"
+  },
+  "references": {
+    "REF-MOTOR-400": [
+      {
+        "component_id": "CV12-M1",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 400,
+        "phases": 3
+      }
+    ],
+    "REF-MOTOR-230": [
+      {
+        "component_id": "CV13-M1",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 230,
+        "phases": 3
+      }
+    ],
+    "REF-ROLLER-50": [
+      {
+        "component_id": "CV12-R1",
+        "kind": "roller",
+        "diameter_mm": 50,
+        "length_mm": 500
+      }
+    ],
+    "REF-MOTOR-AMBIGUOUS": [
+      {
+        "component_id": "CV12-M1",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 400,
+        "phases": 3
+      },
+      {
+        "component_id": "CV12-M2",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 230,
+        "phases": 3
+      }
+    ],
+    "REF-NOT-FOUND": [],
+    "REF-MOTOR-INCONSISTENT": [
+      {
+        "component_id": "CV14-M1",
+        "kind": "motor",
+        "power_kw": 5.5,
+        "voltage_v": 400,
+        "phases": 3
+      }
+    ]
+  },
+  "renderer_version": "decision-row-1",
+  "identification_options": {
+    "satisfied": "Required evidence is complete, unambiguous, and consistent.",
+    "missing": "Required evidence is absent and no allowed reference supplies it.",
+    "conflicting": "Relevant affirmative evidence disagrees.",
+    "unclear": "Evidence is present but its meaning or selected component remains ambiguous."
+  },
+  "identification_rules": "Use relevant affirmative facts; ignore negated or explicitly unrelated values. Accept attached units, written-out numbers, 3 ph, 3~, and single-phase. Do not convert hp/PS to kW. For rollers, ØD×L mm means diameter and length; bare D×L mm is ambiguous. Like-for-like evidence may use one selected matching-kind reference component with all required attributes. Resolve multiple candidates using affirmative or negative constraints; do not select by position. Compare selected reference facts with relevant requested facts. Conflict takes precedence over unclear, missing, then satisfied.",
+  "reference_integrity": {
+    "REF-MOTOR-INCONSISTENT": [
+      {
+        "field": "voltage_v",
+        "values": [
+          230,
+          400
+        ],
+        "source": "mock_reference_integrity_check"
+      }
+    ]
+  }
+}

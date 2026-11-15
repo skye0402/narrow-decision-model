@@ -1,0 +1,8 @@
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.env*
+*.pem
+release-artifacts/
+.DS_Store
