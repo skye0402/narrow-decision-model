@@ -10,7 +10,8 @@ human label review. Ready means buyer review, not order approval or engineering 
 
 ## Run the trained demo
 
-Python 3.11+ and [uv](https://docs.astral.sh/uv/) are needed. No GPU or model API
+Python 3.13 and [uv](https://docs.astral.sh/uv/) are the tested setup.
+The repository pins the Python 3.13 interpreter family in `.python-version`. No GPU or model API
 is required for inference. Download/setup needs internet; inference can be offline.
 
 ```sh
