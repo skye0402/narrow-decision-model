@@ -1,9 +1,10 @@
 # First publication
 
 The public destination exists at https://github.com/skye0402/narrow-decision-model.
-This local repository has a fresh history. Source and release assets have not
-yet been uploaded. Review README.md, MODEL_CARD.md, LICENSE and the selected
-files, then run from this directory:
+This repository has a fresh history, separate from the private research archive.
+The initial public release contains the frozen demo model. Training archives
+remain local pending a separate training-data release review.
+To update source or prepare subsequent releases, use this directory:
 
 ```sh
 git push -u origin main
@@ -13,7 +14,8 @@ gh release create v0.1.0-demo release-artifacts/*.tar.gz \
   --notes-file RELEASE_NOTES.md
 ```
 
-The model download in the README works after the release assets are uploaded.
+The README downloads the pinned demo-model release asset. Upload training
+archives only as part of a separately reviewed training release.
 The archives contain only the pinned demo model, exposed training/development
 optimizer inputs and exact training source. The private final evaluation
 cohort and personal voice/media credentials are excluded. A credential-pattern

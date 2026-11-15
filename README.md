@@ -20,9 +20,10 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --frozen --group benchmark python
 ```
 
 Open http://127.0.0.1:8769. If occupied, add `--port 8770`.
-The pinned model archive must be uploaded to the v0.1.0-demo GitHub release
-before the download command works. Until then, use the prepared local release
-asset: `python scripts/install_artifact.py --archive /path/to/prism-cpu-demo.tar.gz`.
+The pinned model archive is available in the [v0.1.0-demo release](https://github.com/skye0402/narrow-decision-model/releases/tag/v0.1.0-demo).
+For offline setup, use `python scripts/install_artifact.py --archive /path/to/prism-cpu-demo.tar.gz`.
+Training archives listed in artifacts.json are prepared locally and are not
+yet published; the quick-start model installer does not require them.
 Archive sizes and SHA-256 values are in [artifacts.json](artifacts.json).
 The installer checks the archive; the runtime checks the bundle and inference source.
 

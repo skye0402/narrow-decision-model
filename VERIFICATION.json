@@ -7,6 +7,6 @@
   "source_scan": "Credential-pattern scan passed; cloud operations, private voice configuration and environment files excluded.",
   "reserved_evaluation": "Not read or redistributed.",
   "inference_bundle": "Installed from the prepared release archive; exact runtime hashes verified by DemoRuntime.",
-  "status": "local_public_release_candidate",
-  "publication": "GitHub destination requested; source and assets await first push/upload."
+  "status": "public_source_and_frozen_demo_release",
+  "publication": "Source published on main; initial release contains only the frozen demo model. Training archives remain local."
 }

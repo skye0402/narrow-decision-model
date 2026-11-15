@@ -8,7 +8,12 @@ All runtime model files, tokenizer, calibration, mock policy and source-hash
 checks are supplied. No cloud account is needed. The archive retains its
 original bundle identity rather than silently rebinding it to changed code.
 
-## Training: source and exact final-stage optimizer inputs
+## Training: prepared locally, not yet published
+
+The following training archives are not part of the first public release.
+The default model installer and CPU demo work without them.
+
+### Source and exact final-stage optimizer inputs
 
 The `training-inputs.tar.gz` release asset contains the final round's train and
 development optimizer inputs, pilot configuration and original manifest.
